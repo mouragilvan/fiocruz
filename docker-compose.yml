@@ -1,5 +1,9 @@
 version: "3"
 
+networks:
+  laravel:    
+    driver: bridge
+
 services:
   #WEB PHP E APACHE
   web:
@@ -8,11 +12,13 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/app
+      - ./:/app   
     links:
       - db:db      
     environment:
       -  PHP_MEMORY_LIMIT=-1
+    networks:
+      - laravel
 
 
   #MySQL Server
@@ -28,6 +34,8 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
     ports:
       - "3306:3306"
+    networks:
+      - laravel
 
 
   #PHPMYADMIN
@@ -44,5 +52,8 @@ services:
       - "8080:80"
     volumes:
       - ./uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+    networks:
+      - laravel
 
+  
   
