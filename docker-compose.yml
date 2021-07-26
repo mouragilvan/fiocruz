@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  laravel:    
+  laravel:
     driver: bridge
 
 services:
@@ -12,9 +12,12 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/app   
+      - ./:/app
+    working_dir: /app
+    #command: composer install && php artisan migrate
+    restart: always
     links:
-      - db:db      
+      - db:db
     environment:
       -  PHP_MEMORY_LIMIT=-1
     networks:
@@ -55,5 +58,5 @@ services:
     networks:
       - laravel
 
-  
-  
+
+
