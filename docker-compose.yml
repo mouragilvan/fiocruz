@@ -7,21 +7,28 @@ networks:
 services:
   #WEB PHP E APACHE
   web:
-    image: webdevops/php-apache:7.4-alpine
     container_name: ${WEB_CONTAINER_NAME}
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www/html
+    #compartilha um volume para o container
+    volumes:
+      - "./:/var/www/html/"
     ports:
       - "80:80"
-    volumes:
-      - ./:/app
-    working_dir: /app
-    #command: composer install && php artisan migrate
+    expose:
+      - "9000"
+      - "9001"
+    #restarta o serviço quando necessário
     restart: always
-    links:
-      - db:db
     environment:
-      -  PHP_MEMORY_LIMIT=-1
+      #altere para o seu endereço IP
+      XDEBUG_CONFIG: remote_host=192.168.0.76
     networks:
       - laravel
+    links:
+      - db:db
 
 
   #MySQL Server
