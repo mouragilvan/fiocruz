@@ -19,7 +19,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && chmod +x /usr/bin/composer
 
 ### Installl Node
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
 RUN apt-get install --yes nodejs
 
 RUN npm install gulp bower -g
+#RUN npm install laravel-mix --save-dev
+
+RUN a2enmod rewrite

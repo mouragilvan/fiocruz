@@ -5,3 +5,7 @@
 ```
 docker container exec web-fiocruz composer install
 ```
+<h3>Instalar as dependências do NPM</h3>
+```
+docker container exec web-fiocruz  npm install laravel-mix --save-dev
+```
