@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Dashboard">
+    <layout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Formulário de inscrição
@@ -21,27 +21,28 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </layout>
 </template>
 
 <script>
-    import AppLayout from '@/Layouts/AppLayout.vue'
-   
+    import Layout from '@/Layouts/Layout.vue'
+
     export default {
-        components: {
-            AppLayout           
+        components : {
+            Layout
         },
-        props :{
+        props : {
             errors : Object
         },
-        data: ()=>{
+        data : ()=>{
+
             return {
                 form : {
                     name: null
                 }
             }
         },
-        methods: {
+        methods : {
              submitForm(){
                    this.$inertia.post("/public/inscrever", this.form);
              }
