@@ -26,7 +26,7 @@
                   </label>
                   <br>
                   <label v-if="form.foreign == 0">UF de nascimento
-                  <input  type="text" placeholder="UF" v-model="form.birthstatecode" style="text-transform: uppercase"/>
+                  <input  type="text" placeholder="UF" maxlength="2" v-model="form.state" style="text-transform: uppercase"/>
                   </label>
                   <br>    
                   <label v-if="form.foreign == 0">Município de nascimento
@@ -39,12 +39,12 @@
                   </label>
                   <br>
                   <label>Data de nascimento
-                  <input type="date" v-model="form.birthDate" >
+                  <input type="date" v-model="form.birthdate" >
                   </label> 
                   <br>                  
                   <label>Nível de formação
-                  <select v-model="form.type">
-                   <option v-for="(type,index) in options" :keys="index" v-bind:value="type">{{type}}</option>
+                  <select v-model="form.schooling">
+                   <option v-for="(item,index) in options" :keys="index" v-bind:value="item">{{item}}</option>
                   </select>
                   </label>  
                   <button type="submit">Enviar</button>
@@ -81,11 +81,11 @@ export default {
             ],
             form: {
                 name: null,
-                birthDate: null,
+                birthdate: null,
                 foreign: null,
-                birthstatecode: null,
+                state: null,
                 cpf: null,
-                type: null,
+                schooling: null,
                 birthcity: null
             }
         }
