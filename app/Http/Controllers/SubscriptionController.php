@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubscriptionRequest;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 class SubscriptionController extends Controller
 {
     public function index(){
-      return Inertia::render('Subscription');
+      return Inertia::render('SubscriptionForm');
     }
 
     public function store(SubscriptionRequest $request){
@@ -36,6 +37,13 @@ class SubscriptionController extends Controller
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
         ]);
+    }
+
+    public function details(Subscription $subs)
+    {
+         return Inertia::render('Subscription',[
+             'subs'=>$subs
+         ]);
     }
 
 

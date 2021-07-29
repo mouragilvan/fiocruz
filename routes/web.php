@@ -25,5 +25,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum'])->get('inscrever',[SubscriptionController::class,'index']);
 Route::middleware(['auth:sanctum'])->post('inscrever',[SubscriptionController::class,'store']);
-
+Route::middleware(['auth:sanctum'])->get('inscricao/{subs}',[SubscriptionController::class,'details'])->name('details');
 
