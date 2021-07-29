@@ -23,12 +23,12 @@ class SubscriptionRequest extends FormRequest
      */
     public function rules()
     {
-       
+
         return [
             "name"=>"required",
             "birthdate"=>"required|date|before:today",
             "cpf"=>"required_if:foreign,0",
-            "state"=>"required_if:foreign,0|max:2|min:2",
+            "state"=>"required_if:foreign,0",
             "birthcity"=>"required_if:foreign,0",
         ];
     }
