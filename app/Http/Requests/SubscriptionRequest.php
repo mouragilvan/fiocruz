@@ -23,8 +23,22 @@ class SubscriptionRequest extends FormRequest
      */
     public function rules()
     {
+       
         return [
-            'name'=>'required'
+            "name"=>"required",
+            "birthDate"=>"required|date|before:today",
+            "cpf"=>"required_if:foreign,0",
+            "birthstatecode"=>"required_if:foreign,0",
+            "birthcity"=>"required_if:foreign,0",
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            "cpf.required_if"=>"O campo CPF é obrigatório para Brasileiros",
+            "birthcity.required_if"=>"O campo Município de Nascimento é obrigatório para Brasileiros",
+            "birthstatecode.required_if"=>"O campo UF de Nascimento é obrigatório para Brasileiros",
         ];
     }
 }

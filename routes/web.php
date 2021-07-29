@@ -30,6 +30,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('inscrever',[SubscriptionController::class,'index']);
-Route::post('inscrever',[SubscriptionController::class,'store']);
+Route::middleware(['auth:sanctum'])->get('inscrever',[SubscriptionController::class,'index']);
+Route::middleware(['auth:sanctum'])->post('inscrever',[SubscriptionController::class,'store']);
 

@@ -13,6 +13,8 @@ class SubscriptionController extends Controller
     }
 
     public function store(SubscriptionRequest $request){
-         dd($request->all());
+         $data = $request->all();
+         $data['name'] = strtoupper($data['name']);
+         dd($data);
     }
 }
