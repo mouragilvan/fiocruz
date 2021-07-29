@@ -1538,9 +1538,6 @@ select {
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
 }
-.fill-current {
-	fill: currentColor;
-}
 .object-cover {
 	-o-object-fit: cover;
 	   object-fit: cover;
@@ -1880,6 +1877,13 @@ select {
 }
 .ease-in {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.custom-button{
+    background-color: orange;
+}
+.custom-button:hover{
+    background-color: white;
+    border: 2px solid orange;
 }
 .hover\:border-gray-300:hover {
 	--tw-border-opacity: 1;
