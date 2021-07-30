@@ -37,6 +37,7 @@ Execute os comandos para instalar as configurações do projeto, uma linha por v
 
 docker container exec web-fiocruz composer install
 docker container exec web-fiocruz php artisan migrate
+docker container exec web-fiocruz  npm install 
 docker container exec web-fiocruz  npm install laravel-mix --save-dev
 ```
 ## Criar o usuário admin
