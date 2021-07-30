@@ -1,100 +1,55 @@
 <template>
     <app-layout title="Dashboard">
         <template #header>
-             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Formulário de inscrição
+             <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
+                Detalhes da inscrição do(a) {{subs.name}}
              </h2>
-</template>
-      <div class="py-12">
+        </template>
+
+        <div class="py-12">
          <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-12">
                <!-- inicio -->
-               <div v-for="(erro,index) in errors" :keys="index">
-                  {{erro}}
-               </div>
-               <form @submit.prevent="submitForm">
-                  <label>Brasileiro
-                  <input type="radio" id="no" value=0 v-model="form.foreign">
-                  </label>
-                  <br>
-                  <label>Estrangeiro
-                  <input type="radio" id="yes" value=1 v-model="form.foreign">
-                  </label>
-                  <br>
-                  <label v-if="form.foreign== 0">CPF
-                  <input  type="text" placeholder="CPF" v-mask="'###.###.###-##'" v-model="form.cpf"/>
-                  </label>
-                  <br>
-                  <label v-if="form.foreign == 0">UF de nascimento
-                  <input  type="text" placeholder="UF" v-model="form.birthstatecode" style="text-transform: uppercase"/>
-                  </label>
-                  <br>    
-                  <label v-if="form.foreign == 0">Município de nascimento
-                  <input type="text" v-model="form.birthcity" style="text-transform: uppercase">
-                  </label>                  
-                  <br>              
-                  
-                  <label>Nome Completo
-                  <input type="text" v-model="form.name" style="text-transform: uppercase">
-                  </label>
-                  <br>
-                  <label>Data de nascimento
-                  <input type="date" v-model="form.birthDate" >
-                  </label> 
-                  <br>                  
-                  <label>Nível de formação
-                  <select v-model="form.type">
-                   <option v-for="(type,index) in options" :keys="index" v-bind:value="type">{{type}}</option>
-                  </select>
-                  </label>  
-                  <button type="submit">Enviar</button>
-               </form>
+                <p v-if="subs.cpf != ''">CPF: {{subs.cpf}}</p>
+                <p>Estado natal: {{subs.birthdate}}</p>
+                <p v-if="subs.state != ''">Estado natal: {{subs.state}}</p>
+                <p v-if="subs.birthcity != ''">Cidade natal: {{subs.birthcity}}</p>
+                <p>Nível de formação: {{subs.schooling}}</p>
+                <br/>
+                <inertia-link :href="route('home')" >
+                <div class="w-full">
+                    <div class="flex-1 h-full w-96 mx-auto">
+                        <div class="flex w-full bg-white shadow rounded-lg py-4 px-16">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                                </svg>
+                            </div>
+                            <p class="m-auto inset-0 text-xl font-semibold leading-7 text-center text-gray-800">Voltar</p>
+                        </div>
+                    </div>
+                </div>
+                </inertia-link>
                <!-- fim -->
             </div>
          </div>
-      </div>
+        </div>
+
    </app-layout>
 </template>
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import { mask } from 'vue-the-mask'
+
+import { InertiaLink } from '@inertiajs/inertia-vue3';
 
 export default {
     components: {
-        AppLayout
+        AppLayout,
+        InertiaLink
     },
     props: {
-        errors: Object
-    },
-    data: () => {
-
-        return {
-            options: [
-                "Nenhum",
-                "Fundamental",
-                "Médio",
-                "Superior",
-                "Pós-Graduação (Lato Sensu)",
-                "Pós-Graduação (Stricto Sensu - Mestrado)",
-                "Pós-Graduação (Stricto Sensu - Doutorado)"
-            ],
-            form: {
-                name: null,
-                birthDate: null,
-                foreign: null,
-                birthstatecode: null,
-                cpf: null,
-                type: null,
-                birthcity: null
-            }
-        }
-    },
-    methods: {
-        submitForm() {
-            this.$inertia.post("/public/inscrever", this.form);
-        }
-    },
-    directives: { mask }
+        subs: Object
+    }
 }
 </script>

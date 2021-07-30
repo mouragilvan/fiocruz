@@ -1,0 +1,16 @@
+.custom-button{
+    background-color:#f9a90f;
+}
+
+.custom-button:hover{
+    background-color: white;
+    border: 2px solid #f9a90f;
+}
+
+.custom-width{
+    width: 400px;
+}
+
+.custom-bg{
+    background-color:#f9a90f;
+}
