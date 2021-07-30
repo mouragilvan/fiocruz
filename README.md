@@ -65,5 +65,6 @@ docker container exec web-fiocruz php artisan db:seed
     senha: 12345678
 ```
 # Neste momento você pode acessar a interface a partir de http://localhost
-# Para gerenciar o banco de dados, disponibilizei o PHPMyAdmin e deve estar rodando em http://localhost:8080
+# Para gerenciar o banco de dados, disponibilizei o PHPMyAdmin e deve estar rodando em http://localhost:8080 - use as credenciais de acesso do arquivo .env para acesso ao banco de dados
+
 
