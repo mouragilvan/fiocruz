@@ -50,7 +50,9 @@ docker container exec web-fiocruz npm install
 ```
 docker container exec web-fiocruz npm install laravel-mix --save-dev
 ```
-
+```
+docker container exec web-fiocruz npm run dev
+```
 ## Criar o usuário admin
 
 _Passo 5_
