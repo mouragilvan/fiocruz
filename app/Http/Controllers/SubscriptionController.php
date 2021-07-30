@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
 
 class SubscriptionController extends Controller
 {

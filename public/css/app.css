@@ -1106,6 +1106,10 @@ select {
 	margin-left: auto;
 	margin-right: auto;
 }
+.my-6 {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1186,6 +1190,9 @@ select {
 }
 .mb-1 {
 	margin-bottom: 0.25rem;
+}
+.mb-2 {
+	margin-bottom: 0.5rem;
 }
 .block {
 	display: block;
@@ -1348,6 +1355,11 @@ select {
 }
 .list-disc {
 	list-style-type: disc;
+}
+.appearance-none {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
 }
 .grid-cols-6 {
 	grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1554,6 +1566,9 @@ select {
 .p-12 {
 	padding: 3rem;
 }
+.p-10 {
+	padding: 2.5rem;
+}
 .px-4 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -1647,6 +1662,9 @@ select {
 .pt-8 {
 	padding-top: 2rem;
 }
+.pl-2 {
+	padding-left: 0.5rem;
+}
 .text-left {
 	text-align: left;
 }
@@ -1691,6 +1709,9 @@ select {
 }
 .font-semibold {
 	font-weight: 600;
+}
+.font-bold {
+	font-weight: 700;
 }
 .uppercase {
 	text-transform: uppercase;
@@ -1879,11 +1900,17 @@ select {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .custom-button{
-    background-color: orange;
+    background-color:#f9a90f;
 }
 .custom-button:hover{
     background-color: white;
-    border: 2px solid orange;
+    border: 2px solid #f9a90f;
+}
+.custom-width{
+    width: 400px;
+}
+.custom-bg{
+    background-color:#f9a90f;
 }
 .hover\:border-gray-300:hover {
 	--tw-border-opacity: 1;
@@ -1916,6 +1943,10 @@ select {
 .hover\:bg-white:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.hover\:bg-blue-700:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;
@@ -2276,6 +2307,14 @@ select {
 
 	.md\:mt-0 {
 		margin-top: 0px;
+	}
+
+	.md\:mr-2 {
+		margin-right: 0.5rem;
+	}
+
+	.md\:mb-0 {
+		margin-bottom: 0px;
 	}
 
 	.md\:grid {
