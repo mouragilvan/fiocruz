@@ -39,7 +39,14 @@ docker container exec web-fiocruz composer install
 docker container exec web-fiocruz php artisan migrate
 docker container exec web-fiocruz  npm install laravel-mix --save-dev
 ```
+## Criar o usuário admin
+```
+docker container exec web-fiocruz php artisan db:seed
 
+Este comando deverá criar o usuário com as seguintes credenciais:
+    email: admin@fiocruz.br
+    senha: 12345678
+```
 
 
 
