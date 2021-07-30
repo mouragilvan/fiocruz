@@ -19,11 +19,21 @@ Criar o arquivo .env a partir do .env.example:
 Na raiz do projeto, digite: cp .env.example .env
 Ou crie um arquivo .env e cole o conteúdo do .env.example dentro dele
 ```
-##### Rodar o composer no container
 
-#### docker container exec web-fiocruz composer install
-
-<h3>Instalar as dependências do NPM</h3>
 ```
+Passo 3
+Execute o comando para fazer a build da imagem: docker-compose build --no-cache
+Execute o comando para gerar/subir o container: docker-compose up -d
+```
+## Instalar as dependências do projeto
+```
+Passo 4
+Execute os comandos para instalar as configurações do projeto, uma linha por vez:
+docker container exec web-fiocruz composer install
+docker container exec web-fiocruz php artisan migrate
 docker container exec web-fiocruz  npm install laravel-mix --save-dev
 ```
+
+
+
+
