@@ -34,6 +34,7 @@ Execute o comando para gerar/subir o container:
 ```
 Passo 4
 Execute os comandos para instalar as configurações do projeto, uma linha por vez:
+
 docker container exec web-fiocruz composer install
 docker container exec web-fiocruz php artisan migrate
 docker container exec web-fiocruz  npm install laravel-mix --save-dev
