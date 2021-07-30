@@ -3,7 +3,7 @@
 
 ## Tecnologias usadas
 ```
- Infra: Docker
+ Infraestrutura: Docker
  Desenvolvimento: PHP | Laravel | Jetstream | VueJS | NodeJS | InertiaJS
  Design CSS: Tailwind CSS
  Banco de dados: MySQL
