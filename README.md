@@ -10,7 +10,8 @@
 ## Instruções gerais
 ```
 Passo 1 
-Instalar o Docker na sua máquina caso não tenha. Você pode fazer o download em https://docs.docker.com/docker-for-windows/install/
+Instalar o Docker na sua máquina caso não tenha. 
+Você pode fazer o download em https://docs.docker.com/docker-for-windows/install/
 ```
 ```
 Passo 2
