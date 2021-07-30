@@ -3,8 +3,11 @@
 
 # Tecnologias usadas
 ## Docker
-## PHP Laravel
-## MySQL
+## PHP | Laravel | Jetstream | VueJS
+## Banco de dados MySQL
+
+
+
 
 <h3>Rodar o composer no container</h3>
 
