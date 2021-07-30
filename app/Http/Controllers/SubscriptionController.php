@@ -27,10 +27,19 @@ class SubscriptionController extends Controller
 
     public function home()
     {
+
+
          if( auth()->check() ){
-             return Inertia::render('ListSubscriptions',[
+            
+            if( auth()->user()->is_admin ){
+                $subs = Subscription::query();
+                return Inertia::render('ListSubscriptions',[
+                    'list'=>$subs->orderBy('id','desc')->paginate(1)
+                ]);
+            }            
+            return Inertia::render('ListSubscriptions',[
                  'list'=>auth()->user()->subscriptions()->orderBy('id','desc')->paginate(1)
-             ]);
+            ]);
          }
         return Inertia::render('Welcome', [
             'canLogin' => Route::has('login'),
