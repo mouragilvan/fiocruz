@@ -23,8 +23,11 @@ Ou crie um arquivo .env e cole o conteúdo do .env.example dentro dele
 ```
 Passo 3
 Execute o comando para fazer a build da imagem: 
+
    docker-compose build --no-cache
+   
 Execute o comando para gerar/subir o container: 
+
    docker-compose up -d
 ```
 ## Instalar as dependências do projeto
