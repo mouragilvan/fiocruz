@@ -45,6 +45,7 @@ Passo 5
 docker container exec web-fiocruz php artisan db:seed
 
 Este comando deverá criar o usuário com as seguintes credenciais:
+
     email: admin@fiocruz.br
     senha: 12345678
 ```
