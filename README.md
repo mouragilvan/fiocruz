@@ -9,6 +9,8 @@
  Banco de dados: MySQL
 ```
 ## Instruções gerais
+
+### Infraestrutura da aplicação
 ```
 Passo 1 
 Instalar o Docker na sua máquina caso não tenha. 
@@ -31,7 +33,7 @@ Execute o comando para gerar/subir o container:
 
    docker-compose up -d
 ```
-## Instalar as dependências do projeto
+### Instalar as dependências do projeto
 ```
 Passo 4
 Execute os comandos para instalar as configurações do projeto, uma linha por vez:
