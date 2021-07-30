@@ -33,7 +33,7 @@ Execute o comando para gerar/subir o container:
 
    docker-compose up -d
 ```
-### Instalar as dependências do projeto
+### Instalação das dependências do projeto
 ```
 Passo 4
 Execute os comandos para instalar as configurações do projeto, uma linha por vez:
